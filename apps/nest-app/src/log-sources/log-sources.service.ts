@@ -29,7 +29,7 @@ export class LogSourcesService {
   }
 
   async getById(id: string, ownerId: string) {
-    const logSource = this.repo.findOneBy({ id, ownerId });
+    const logSource = await this.repo.findOneBy({ id, ownerId });
     if (!logSource) {
       throw new NotFoundException('Log source not found');
     }

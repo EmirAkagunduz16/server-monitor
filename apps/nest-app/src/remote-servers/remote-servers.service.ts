@@ -32,7 +32,7 @@ export class RemoteServersService {
   }
 
   async getById(id: string, ownerId: string) {
-    const server = this.repo.findOneBy({ id, ownerId });
+    const server = await this.repo.findOneBy({ id, ownerId });
     if (!server) {
       throw new NotFoundException('Remote server not found');
     }

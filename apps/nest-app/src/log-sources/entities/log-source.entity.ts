@@ -37,7 +37,7 @@ export class LogSource {
   @Column()
   type: LogSourceType;
 
-  @Column()
+  @Column({ type: 'simple-json' })
   config: Record<string, any>;
 
   @CreateDateColumn()
